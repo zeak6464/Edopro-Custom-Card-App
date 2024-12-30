@@ -948,6 +948,12 @@ class ScriptBuilder(ttk.Frame):
         # Add categories and properties
         self.add_categories_and_properties()
 
+    def create_tooltip_checkbutton(self, parent, text, tooltip_text, variable):
+        """Create a checkbutton with a tooltip."""
+        cb = ttk.Checkbutton(parent, text=text, variable=variable)
+        CreateToolTip(cb, tooltip_text)
+        return cb
+
     def add_categories_and_properties(self):
         # Add Categories frame with tooltips
         cat_frame = ttk.LabelFrame(self.options_frame, text="Categories")
